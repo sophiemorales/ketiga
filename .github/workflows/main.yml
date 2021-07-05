@@ -12,12 +12,12 @@ jobs:
     - name: Mendownload Ngrok.
       run: |
         Invoke-WebRequest https://drive.google.com/uc?id=1SqMUE8nOzpQ32xD1LsRUTAcH8mbpvOzJ -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/start.bat -OutFile start.bat
-        Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/wallpaper.png -OutFile wallpaper.bmp
-        Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/wallpaper.bat -OutFile wallpaper.bat
-    - name: Mengextract Ngrok File.
-      run: Expand-Archive ngrok.zip
-    - name: Connect Ke Akun Ngrok.
+        Invoke-WebRequest https://raw.githubusercontent.com/AgungBaskoroMuda/ketiga/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/AgungBaskoroMuda/ketiga/main/wallpaper.jpg -OutFile wallpaper.jpg
+        Invoke-WebRequest https://raw.githubusercontent.com/AgungBaskoroMuda/ketiga/main/wallpaper.bat -OutFile wallpaper.bat
+    - name: Mengekstrasi berkas Ngrok.
+      run: Membuka berkas dari ngrok.zip
+    - name: Terhubung Ke Akun Ngrok.
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
@@ -26,13 +26,13 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-        copy wallpaper.bmp D:\a\wallpaper.bmp
+        copy wallpaper.jpg D:\a\wallpaper.jpg
         copy wallpaper.bat D:\a\wallpaper.bat
     - name: Membuat Tunnel.
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Terhubung Ke RDP Kamu CPU 2 Core - 7GB Ram - 255 SSD.
       run: cmd /c start.bat
-    - name: Berhasil Dibuat! Anda Bisa Menutup Tab Sekarang.
+    - name: Selamat, Berhasil Dibuat! Anda Bisa Menutup Tab Sekarang.
       run: | 
-        Invoke-WebRequest https://github.com/manjadira/uk/raw/main/loop.ps1 -OutFile loop.ps1
+        Invoke-WebRequest https://github.com/AgungBaskoroMuda/ketiga/raw/main/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
