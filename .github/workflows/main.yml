@@ -12,7 +12,7 @@ jobs:
     - name: Mendownload Ngrok.
       run: |
         Invoke-WebRequest https://drive.google.com/uc?id=1SqMUE8nOzpQ32xD1LsRUTAcH8mbpvOzJ -OutFile ngrok.zip
-        Invoke-WebRequest https://raw.githubusercontent.com/bmanjadira/uk/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/start.bat -OutFile start.bat
         Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/wallpaper.png -OutFile wallpaper.bmp
         Invoke-WebRequest https://raw.githubusercontent.com/manjadira/uk/main/wallpaper.bat -OutFile wallpaper.bat
     - name: Mengextract Ngrok File.
