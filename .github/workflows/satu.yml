@@ -1,4 +1,4 @@
-name: FreeRDP
+name: FreeRDP_01
 
 on: workflow_dispatch
 
