@@ -20,7 +20,7 @@ jobs:
     - name: Terhubung Ke Akun Ngrok.
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN_01 }} 
+        NGROK_AUTH_TOKEN: ${{ secrets.TOKEN01 }} 
     - name: Mengaktifkan Akses RDP.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
