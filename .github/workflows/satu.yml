@@ -18,9 +18,9 @@ jobs:
     - name: Mengekstrasi berkas Ngrok.
       run: Expand-Archive ngrok.zip
     - name: Terhubung Ke Akun Ngrok.
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN2
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.TOKEN01 }} 
+        NGROK_AUTH_TOKEN2: ${{ secrets.TOKEN01 }} 
     - name: Mengaktifkan Akses RDP.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
